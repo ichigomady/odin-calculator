@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script type="module" src="./script.js" defer></script>
     <title>Calculator</title>
 </head>
+
 <body>
-    
+    <div class="calc-container h-100 d-flex align-items-center justify-content-center">
+        <div class="card">
+            <div class="input-group display-row clear">
+                <input type="text" class="form-control" id="display" disabled>
+                <span class="input-group-text" id="basic-addon1"><button class="btn btn-light" id="clear">CE</button></span>
+            </div>
+            <div class="num_row">
+                <button class="btn row_item num_item">7</button>
+                <button class="btn row_item num_item">8</button>
+                <button class="btn row_item num_item">9</button>
+                <button class="btn row_item operator operator_div">/</button>
+            </div>
+            <div class="num_row">
+                <button class="btn row_item num_item">4</button>
+                <button class="btn row_item num_item">5</button>
+                <button class="btn row_item num_item">6</button>
+                <button class="btn row_item operator operator_multiply">*</button>
+            </div>
+            <div class="num_row">
+                <button class="btn row_item num_item">1</button>
+                <button class="btn row_item num_item">2</button>
+                <button class="btn row_item num_item">3</button>
+                <button class="btn row_item operator operator_minus">-</button>
+            </div>
+            <div class="num_row">
+                <button class="btn row_item num_item">0</button>
+                <button class="btn row_item num_dot">.</button>
+                <button class="btn row_item operator operator_equal">=</button>
+                <button class="btn row_item operator operator_plus">+</button>
+            </div>
+        </div>
+    </div>
+    </div>
 </body>
+
 </html>
