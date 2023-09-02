@@ -4,24 +4,22 @@ export function update_display(display, item) {
     let result;
     if (display.value == '') {
         enable_all_operator();
-        enable_num_dot();
         disable_operator_equal();
         display.value = display.value + item.textContent;
-        display.value.includes('.') ? disable_num_dot() : enable_num_dot();
+        (display.value.includes('.') && !/[+\-*/]/.test(display.value)) ? (disable_num_dot(), disable_operator_equal()) : enable_num_dot();
     } else if (['+', '-', '*', '/'].includes(item.textContent)) {
         disable_all_operator();
-        enable_num_dot();
 
         // handle if display.value already has an operator.\
-        if(/[+\-*/]/.test(display.value)){
+        if (/[+\-*/]/.test(display.value)) {
             result = operate(display.value);
             result = Number.isInteger(result[1]) ? result[1] : result[1].toFixed(2);
-        }else {
+        } else {
             result = display.value
         }
-        
+
         display.value = result + item.textContent;
-        display.value.includes('.') ? disable_num_dot() : enable_num_dot();
+        (display.value.includes('.') && !/[+\-*/]/.test(display.value)) ? d(disable_num_dot(), disable_operator_equal()) : enable_num_dot();
     } else if (item.textContent === '=') {
         result = operate(display.value);
 
@@ -34,12 +32,11 @@ export function update_display(display, item) {
             disable_all_operator();
             display.value = result[1];
         }
-        display.value.includes('.') ? disable_num_dot() : enable_num_dot();
+        (display.value.includes('.') && !/[+\-*/]/.test(display.value)) ? (disable_num_dot(), disable_operator_equal()) : enable_num_dot();
     } else {
         enable_all_operator();
-        enable_num_dot();
         display.value = display.value + item.textContent;
-        display.value.includes('.') ? disable_num_dot() : enable_num_dot();
+        (display.value.includes('.') && !/[+\-*/]/.test(display.value)) ? (disable_num_dot(), disable_operator_equal()) : enable_num_dot();
     }
 }
 
