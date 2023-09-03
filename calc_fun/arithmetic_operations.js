@@ -38,20 +38,15 @@ export function operate(expression) {
     switch (operator) {
         case '+':
             return [0, add(Number(num1), Number(num2))];
-            break;
         case '-':
             return [0, subtract(Number(num1), Number(num2))];
-            break;
         case '*':
             return [0, multiply(Number(num1), Number(num2))];
-            break;
         case '/':
             return [0, division(Number(num1), Number(num2))];
-            break;
 
         default:
             alert('Unknown operator')
             return [1, 'error'];
-            break;
     }
 }
